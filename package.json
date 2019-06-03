@@ -1,0 +1,37 @@
+{
+  "name": "cordova-plugin-mobile-face-detection",
+  "version": "0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/syneo-tools-gmbh/cordova-plugin-mobile-face-detection"
+  },
+  "cordova": {
+    "id": "cordova-plugin-mobile-face-detection",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "mobile",
+    "google vision",
+    "face",
+    "smile",
+    "face recognition",
+    "face tracking",
+    "face classificaiton",
+    "face api",
+    "cordova-android",
+    "cordova-ios",
+  ],
+  "engines": {
+    "cordovaDependencies": {
+      "cordova-android": ">=6.3.0",
+      "cordova-ios": ">=4.3.0"
+    }
+  },
+  "author": "syneoToolsGmbH",
+  "license": "GPL-3.0",
+  "description": "Cordova plugin for Google Mobile Vision Face API"
+}
