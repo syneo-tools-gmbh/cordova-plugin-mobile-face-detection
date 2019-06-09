@@ -115,7 +115,7 @@ A Face object has the following format:
 
 A set of points that outlines a facial landmark or region such as eye, face, or lips.
 
-When 'left' and 'right' are used, they are relative to the subject. For example, the LEFT_EYE contour is the subject's left eye, not the eye that is on the left when viewing the image.
+When 'left' and 'right' are used, they are relative to the subject. For example, the `LEFT_EYE` contour is the subject's left eye, not the eye that is on the left when viewing the image.
 
 ```javascript
 {
@@ -151,4 +151,37 @@ When 'left' and 'right' are used, they are relative to the subject. For example,
 
 ## Landmark Object
 
-**TODO**
+A point on a detected face, such as an eye, nose, or mouth.
+
+When 'left' and 'right' are used, they are relative to the subject. For example, the LEFT_EYE landmark is the subject's left eye, not the eye that is on the left when viewing the image.
+
+
+```javascript
+{
+  // type of landmark
+  "type": INTEGER (LANDMARK TYPE)
+  
+  // (x, y) positions of the contour where (0, 0) is the upper-left corner of the image.
+  "position": {
+      "x": FLOAT,
+      "y": FLOAT
+    },
+    ...
+  ]
+}
+```
+
+### Landmark type
+
+- `0` means `BOTTOM_MOUTH` The center of the subject's bottom lip.
+- `1` means `LEFT_CHEEK` The midpoint between the subject's left mouth corner and the outer corner of the subject's left eye.
+- `2` means `LEFT_EAR_TIP` Treating the top of the subject's left ear as a circle, this is the point at 45 degrees around the circle in Cartesian coordinates.
+- `3` means `LEFT_EAR` The midpoint of the subject's left ear tip and left ear lobe.
+- `4` means `LEFT_EYE` The center of the subject's left eye cavity.
+- `5` means `LEFT_MOUTH` The subject's left mouth corner where the lips meet.
+- `6` means `NOSE_BASE` The midpoint between the subject's nostrils where the nose meets the face.
+- `7` means `RIGHT_CHEEK` The midpoint between the subject's right mouth corner and the outer corner of the subject's right eye.
+- `8` means `RIGHT_EAR_TIP` Treating the top of the subject's right ear as a circle, this is the point at 135 degrees around the circle in Cartesian coordinates.
+- `9` means `RIGHT_EAR` The midpoint of the subject's right ear tip and right ear lobe.
+- `10` means `RIGHT_EYE` The center of the subject's right eye cavity.
+- `11` means `RIGHT_MOUTH` The subject's right mouth corner where the lips meet.
