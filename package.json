@@ -8,8 +8,7 @@
   "cordova": {
     "id": "cordova-plugin-mobile-face-detection",
     "platforms": [
-      "android",
-      "ios"
+      "android"
     ]
   },
   "keywords": [
@@ -23,12 +22,11 @@
     "face classificaiton",
     "face api",
     "cordova-android",
-    "cordova-ios",
+    "cordova-ios"
   ],
   "engines": {
     "cordovaDependencies": {
-      "cordova-android": ">=6.3.0",
-      "cordova-ios": ">=4.3.0"
+      "cordova-android": ">=6.3.0"
     }
   },
   "author": "syneoToolsGmbH",
