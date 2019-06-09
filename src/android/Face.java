@@ -32,9 +32,9 @@ public class Face extends CordovaPlugin {
   //private static final int REQUEST_CODE = 99;
 
   private static final int NORMFILEURI = 0; // Make bitmap without compression using uri from picture library (NORMFILEURI & NORMNATIVEURI have same functionality in android)
-  private static final int NORMNATIVEURI = 1; // Make compressed bitmap using uri from picture library for faster ocr but might reduce accuracy (NORMFILEURI & NORMNATIVEURI have same functionality in android)
+  private static final int NORMNATIVEURI = 1; // Make compressed bitmap using uri from picture library for faster detection but might reduce accuracy (NORMFILEURI & NORMNATIVEURI have same functionality in android)
   private static final int FASTFILEURI = 2; // Make uncompressed bitmap using uri from picture library (FASTFILEURI & FASTFILEURI have same functionality in android)
-  private static final int FASTNATIVEURI = 3; // Make compressed bitmap using uri from picture library for faster ocr but might reduce accuracy (FASTFILEURI & FASTFILEURI have same functionality in android)
+  private static final int FASTNATIVEURI = 3; // Make compressed bitmap using uri from picture library for faster detection but might reduce accuracy (FASTFILEURI & FASTFILEURI have same functionality in android)
   private static final int BASE64 = 4;  // send base64 image instead of uri
 
   private static final int TARGETWIDTH = 1024;
@@ -68,14 +68,13 @@ public class Face extends CordovaPlugin {
                   if (imagestr.substring(0, 6).equals("file://")) {
                     imagestr = argimagestr.replaceFirst("file://", "");
                   }
-                  //
 
                   uri = Uri.parse(imagestr);
 
-                  if ((argstype == NORMFILEURI || argstype == NORMNATIVEURI) && uri != null) // normal ocr
+                  if ((argstype == NORMFILEURI || argstype == NORMNATIVEURI) && uri != null) // normal detection
                   {
                     bitmap = MediaStore.Images.Media.getBitmap(cordova.getActivity().getBaseContext().getContentResolver(), uri);
-                  } else if ((argstype == FASTFILEURI || argstype == FASTNATIVEURI) && uri != null) //fast ocr (might be less accurate)
+                  } else if ((argstype == FASTFILEURI || argstype == FASTNATIVEURI) && uri != null) //fast detection (might be less accurate)
                   {
                     bitmap = decodeBitmapUri(cordova.getActivity().getBaseContext(), uri);
                   }
@@ -172,7 +171,7 @@ public class Face extends CordovaPlugin {
                   landmarkObj.put("type", landmark.getType());
                   landmarksArr.put(landmarkObj);
                 }
-                faceObj.put("landmark", landmarkArr);
+                faceObj.put("landmarks", landmarkArr);
 
                 resultFaces.put(faceObj);
               }
