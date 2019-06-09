@@ -1,5 +1,5 @@
-# cordova-plugin-mobile-face-decetion
-Cordova plugin for face-decetion using google mobile vision face API
+# cordova-plugin-mobile-face-detection
+Cordova plugin for face-detection using google mobile vision face API
 
 > This plugin was made possible because of [google mobile vision face API](https://developers.google.com/vision/face-detection-concepts). This plugin is absolutely free and will work offline once install is complete. All required files required for Face detection are downloaded during install if necessary space is available.
 
