@@ -3,7 +3,6 @@ Cordova plugin for face-decetion using google mobile vision face API
 
 > This plugin was made possible because of [google mobile vision face API](https://developers.google.com/vision/face-detection-concepts). This plugin is absolutely free and will work offline once install is complete. All required files required for Face detection are downloaded during install if necessary space is available.
 
-
 This plugin defines a global `face` object, which provides an method that accepts image uri or base64 inputs. If some faces was detected in the image, this faces will be returned as a JSON Object (see further documentation for the format). The imageuri or base64 can be send to the plugin using any another plugin like [cordova-plugin-camera](https://github.com/apache/cordova-plugin-camera) or [cordova-plugin-document-scanner](https://github.com/NeutrinosPlatform/cordova-plugin-document-scanner). Although the object is attached to the global scoped `window`, it is not available until after the `deviceready` event.
 
 ```
@@ -20,7 +19,7 @@ console.log(face);
 
 # Installation Steps
 
-**TODO** (Only manual installation as far)
+**TODO** (only manual installation from source code for now)
 
 # Plugin Usage
 
