@@ -59,7 +59,7 @@ The **`errorCallback`** function returns `Scan Failed: Found no faces to scan` i
 
 The success callback will return a JSON Object in the format
 
-```
+```javascript
 {
   "faces": [...]
 }
@@ -71,7 +71,7 @@ Where faces in an array of Face objects.
 
 A Face object has the following format:
 
-```
+```javascript
 {
   // face ID
   "id": INTEGER,
@@ -113,7 +113,41 @@ A Face object has the following format:
 
 ## Contour Object
 
-**TODO**
+A set of points that outlines a facial landmark or region such as eye, face, or lips.
+
+When 'left' and 'right' are used, they are relative to the subject. For example, the LEFT_EYE contour is the subject's left eye, not the eye that is on the left when viewing the image.
+
+```javascript
+{
+  // type of contour
+  "type": INTEGER (CONTOUR TYPE)
+  
+  // array of (x, y) positions of the contour where (0, 0) is the upper-left corner of the image.
+  "positions": [
+    {
+      "x": FLOAT,
+      "y": FLOAT
+    },
+    ...
+  ]
+}
+```
+
+### Contour Type
+
+-	`1` means `FACE` The outline of the subject's face
+-	`2` means `LEFT_EYEBROW_TOP` The top outline of the subject's left eyebrow
+-	`3` means `LEFT_EYEBROW_BOTTOM` The bottom outline of the subject's left eyebrow
+-	`4` means `RIGHT_EYEBROW_TOP` The top outline of the subject's right eyebrow
+-	`5` means `RIGHT_EYEBROW_BOTTOM` The bottom outline of the subject's right eyebrow
+-	`6` means `LEFT_EYE` The outline of the subject's left eye cavity
+-	`7` means `RIGHT_EYE` The outline of the subject's right eye cavity
+-	`8` means `UPPER_LIP_TOP` The top outline of the subject's upper lip
+-	`9` means `UPPER_LIP_BOTTOM` The bottom outline of the subject's upper lip
+-	`10` means `LOWER_LIP_TOP` The top outline of the subject's lower lip
+-	`11` means `LOWER_LIP_BOTTOM` The bottom outline of the subject's lower lip
+-	`12` means `NOSE_BRIDGE` The outline of the subject's nose bridge
+-	`13` means `NOSE_BOTTOM` The outline of the subject's nose bridge
 
 ## Landmark Object
 
