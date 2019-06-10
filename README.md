@@ -5,10 +5,10 @@ Cordova plugin for face-detection using google mobile vision face API
 
 This plugin defines a global `face` object, which provides an method that accepts image uri or base64 inputs. If some faces was detected in the image, this faces will be returned as a JSON Object (see further documentation for the format). The imageuri or base64 can be send to the plugin using any another plugin like [cordova-plugin-camera](https://github.com/apache/cordova-plugin-camera) or [cordova-plugin-document-scanner](https://github.com/NeutrinosPlatform/cordova-plugin-document-scanner). Although the object is attached to the global scoped `window`, it is not available until after the `deviceready` event.
 
-```
+```javascript
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
-console.log(face);
+  console.log(face);
 }
 ```
 
